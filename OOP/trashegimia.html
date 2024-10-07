@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// let vehicle = {
+//     move: function() {
+//         console.log(`${this.name} is moving at ${this.speed} km/h.`);
+//     }
+// };
+// let car = Object.create(vehicle);
+// car.name = "Toyota";
+// car.speed = 120;
+// car.refuel = function() {
+//     console.log(`${this.name} is refueling.`);
+// };
+// let bicycle = Object.create(vehicle);
+// bicycle.name = "Mountain Bike";
+// bicycle.speed = 25;
+// bicycle.pedal = function() {
+//     console.log(`${this.name} is being pedaled.`);
+// };
+// car.move();     
+// car.refuel();   
+
+// bicycle.move();   
+// bicycle.pedal();  
+
+const person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+person.prototype.calcAge = function () {
+  console.log(2025 - this.birthYear);
+};
+
+const student = function (firstName, birthYear, course) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+  this.course = course;
+};
+const paul = new student("Paul", 2010, "Computer Science");
+    </script>
+</body>
+</html>

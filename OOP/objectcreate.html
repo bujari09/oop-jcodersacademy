@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const Persondetails = {
+    pershkrimi() {
+        console.log(`${this.name} lindi ne vitin ${this.birthYear}.`);
+    }
+}
+
+const shtoPerson = function(name, birthYear) {
+    const person = Object.create(Persondetails);
+    person.name = name;
+    person.birthYear = birthYear;
+    return person;
+}
+
+const Arti = shtoPerson('Arti', 2001);
+const Endi = shtoPerson('Endi', 1995);
+const Albani = shtoPerson('Albani', 2003);
+
+console.log(Arti);
+console.log(Endi);
+console.log(Albani);
+
+// Thirrni metodat pershkrimi
+Arti.pershkrimi();
+Endi.pershkrimi();
+Albani.pershkrimi(); 
+    </script>
+</body>
+</html>
+

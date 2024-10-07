@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Krijojmë një klasë bazë të quajtur 'Punonjes'
+class Punonjes {
+    constructor(emri, pozita) {
+        this.emri = emri;
+        this.pozita = pozita;
+    }
+    //Krijimi i metodës 
+    pershendet() {
+        console.log(`Përshëndetje! Unë jam ${this.emri}, dhe jam ${this.pozita}.`);
+    }
+}
+// Krijojmë një klasë të quajtur 'Menaxher' që trashëgon nga 'Punonjes'
+class Menaxher extends Punonjes {
+    miratonProjekte() {
+        console.log("Projekti është miratuar.");
+    }
+}
+// Krijo një objekt të klasës 'Menaxher'
+const menaxheri = new Menaxher("Alma", "Menaxhere");
+// Përdorimi i metodadave të trashëguara dhe metodat e klasës 'Menaxher'
+menaxheri.pershendet();  
+menaxheri.miratonProjekte();  
+
+    </script>
+</body>
+</html>

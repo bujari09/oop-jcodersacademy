@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Klasa Libri që do të ndërtohet
+class Book {
+    constructor(title, author, pages) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+    }
+    describe() {
+        console.log(`${this.title} është një libër nga ${this.author}, me ${this.pages} faqe.`);
+    }
+}
+class BookBuilder {
+    constructor() {
+        this.title = 'Titulli i Librit';
+        this.author = 'Autori i Panjohur';
+        this.pages = 100;
+    }
+    setTitle(title) {
+        this.title = title;
+        return this;
+    }
+    setAuthor(author) {
+        this.author = author;
+        return this;
+    }
+    setPages(pages) {
+        this.pages = pages;
+        return this;
+    }
+    build() {
+        return new Book(this.title, this.author, this.pages);
+    }
+}
+
+// Përdorimi i BookBuilder për të krijuar objekte të ndryshme të tipit Book
+const myBook = new BookBuilder()
+    .setTitle('Mësimi i Programimit')
+    .setAuthor('Arti')
+    .setPages(150)
+    .build();
+
+myBook.describe();
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //https://www.w3resource.com/javascript-exercises/oop/index.php
+// JavaScript Bank Account Class: Manage account balance
+// Write a JavaScript program that creates a class called "BankAccount" with properties
+//  for account number and balance. Include methods to deposit and withdraw money from the account.
+//   Create some instances of the "BankAccount" class, deposit some money, and withdraw a portion of it.
+
+// Javascript code:
+
+class BankAccount {
+    constructor(accountNumber, balance) {
+      this.accountNumber = accountNumber;
+      this.balance = balance;
+      console.log(`A/c No.: ${accountNumber}`);
+      console.log(`Opening Balance: $${balance}`);    
+    }
+    deposit(amount) {
+      this.balance += amount;
+      console.log(`Deposited: $${amount}`);
+    }
+    withdraw(amount) {
+      if (amount <= this.balance) {
+        this.balance -= amount;
+        console.log(`Withdrawn: $${amount}`);
+      } 
+      else 
+      {
+        console.log(`Want to withdrawn: $${amount}`);
+        console.log('Insufficient balance');
+      }
+    }
+    displayBalance() {
+      console.log(`Account Balance: $${this.balance}`);
+    }
+  }
+  // Krijimi i nje objekti te klases BankAccount 
+  const account = new BankAccount('123', 1500);
+  //Funksioni per te deponuar paratë
+  account.deposit(500);
+   // Funksioni për të shikuar gjendjen aktuale
+  account.displayBalance();
+  // Funksioni për të terhequr paratë
+  account.withdraw(400);
+  // Funksioni për të shikuar gjendjen aktuale
+  account.displayBalance();
+ 
+  </script>
+</body>
+</html>

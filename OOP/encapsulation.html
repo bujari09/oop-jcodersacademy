@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         class Car {
+//     #model;  
+//     #speed;  
+//     constructor(model, speed) {
+//         this.#model = model;
+//         this.#speed = speed; 
+//     }
+//     setModel(model) {
+//         this.#model = model;
+//     }
+//     getModel() {
+//         return this.#model;
+//     }
+//     setSpeed(speed) {
+//         if (speed >= 0) { 
+//             this.#speed = speed;
+//         } else {
+//             console.log("Shpejtësia duhet të jetë pozitive.");
+//         }
+//     }
+//     getSpeed() {
+//         return this.#speed;
+//     }
+// }
+
+// const vetura = new Car("Toyota", 120);
+
+// console.log(vetura.getModel());  
+// console.log(vetura.getSpeed()); 
+
+// vetura.setModel("Honda");
+// vetura.setSpeed(150);
+
+// console.log(vetura.getModel());
+// console.log(vetura.getSpeed()); 
+
+// vetura.setSpeed(-50);
+class Vehicle {
+    constructor(model) {
+        this._model = model; // Fusha "protected" e modelit
+    }
+
+    getModel() {
+        return this._model;
+    }
+}
+
+class Car {
+    constructor(model, speed) {
+        this._vehicle = new Vehicle(model); 
+        this._speed = speed; 
+    }
+
+    getModel() {
+        return this._vehicle.getModel(); 
+    }
+
+    setSpeed(speed) {
+        if (speed >= 0) {
+            this._speed = speed;
+        } else {
+            console.log("Shpejtësia duhet të jetë pozitive.");
+        }
+    }
+
+    getSpeed() {
+        return this._speed;
+    }
+}
+
+const myCar = new Car("Toyota", 120);
+console.log(myCar.getModel());  
+console.log(myCar.getSpeed());  
+myCar.setSpeed(150);
+console.log(myCar.getSpeed()); 
+
+
+    </script>
+</body>
+</html>

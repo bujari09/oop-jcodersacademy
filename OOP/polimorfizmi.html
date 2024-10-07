@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         // Klasa Prind - Device (Pajisje)
+// class Device {
+//     turnOn() {
+//         console.log("The device is now on.");
+//     }
+// }
+// class Television extends Device {
+//     turnOn() {
+//         super.turnOn(); 
+//         console.log("The TV is displaying the last channel.");
+//     }
+// }
+// class Radio extends Device {
+//     turnOn() {
+//         super.turnOn(); 
+//         console.log("The radio is playing the last station.");
+//     }
+// }
+// const myTV = new Television();
+// myTV.turnOn();
+// const myRadio = new Radio();
+// myRadio.turnOn();
+
+class PaymentMethod {
+    constructor(amount) {
+        this.amount = amount;
+    }
+    
+    processPayment() {
+        return "Processing payment.";
+    }
+}
+
+class CreditCard extends PaymentMethod {
+    processPayment() {
+        const parentMessage = super.processPayment();
+        return `${parentMessage} Payment made with Credit Card.`;
+    }
+}
+class PayPal extends PaymentMethod {
+    processPayment() {
+        const parentMessage = super.processPayment();
+        return `${parentMessage} Payment made with PayPal.`;
+    }
+}
+const creditCardPayment = new CreditCard(100);
+console.log(creditCardPayment.processPayment());
+const payPalPayment = new PayPal(50);
+console.log(payPalPayment.processPayment());
+
+
+
+    </script>
+</body>
+</html>

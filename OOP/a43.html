@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Klasa Prind - Shape (Forma)
+class Shape {
+    calculateArea() {
+        console.log("This method should be overridden by subclasses");
+    }
+}
+
+class Rectangle extends Shape {
+    constructor(width, height) {
+        super();
+        this.width = width;
+        this.height = height;
+    }
+
+    calculateArea() {
+        console.log("Calculating area for Rectangle...");
+        return this.width * this.height;
+    }
+}
+
+class Triangle extends Shape {
+    constructor(base, height) {
+        super();
+        this.base = base;
+        this.height = height;
+    }
+
+    calculateArea() {
+        console.log("Calculating area for Triangle...");
+        return 0.5 * this.base * this.height;
+    }
+}
+
+
+const myRectangle = new Rectangle(10, 5);
+const myTriangle = new Triangle(10, 5);
+
+console.log(`Rectangle area: ${myRectangle.calculateArea()}`);
+console.log(`Triangle area: ${myTriangle.calculateArea()}`);
+
+    </script>
+</body>
+</html>

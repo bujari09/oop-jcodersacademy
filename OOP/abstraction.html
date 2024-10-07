@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function createStudent(name, score) {
+    return {
+        name: name,
+        score: score,
+        hasPassed: function() {
+            if (this.score >= 50) {
+                console.log(`${this.name} has passed the exam.`);
+            } else {
+                console.log(`${this.name} has not passed the exam.`);
+            }
+        }
+    };
+}
+let student1 = createStudent("Albani", 55);
+student1.hasPassed(); 
+
+let student2 = createStudent("Arti", 45);
+student2.hasPassed(); 
+
+    </script>
+</body>
+</html>
